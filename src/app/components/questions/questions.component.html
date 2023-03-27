@@ -1,0 +1,39 @@
+<form [formGroup]="quizForm" (ngSubmit)="quizSubmit()">
+    <div class="container mt-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10 col-lg-10">
+                <div class="border">
+                    <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                            <h4>MCQ Quiz</h4><span>(5 of 20)</span></div>
+                        </div>
+                  <tr *ngFor="let quiz of quiz;let j=index">
+                    <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row align-items-center question-title">
+                            <h3 class="text-danger">Q.{{quiz.id}}. {{quiz.questions}}</h3>
+                           
+                            <h5 class="mt-1 ml-2"></h5>
+                        
+</div><div class="ans ml-2"> 
+<input type="radio" formControlName="mcq" value="{{quiz.mcq.A}}"> <span style="width:300px">{{quiz.mcq.A}}</span>
+   
+</div><div class="ans ml-2">
+<input type="radio" formControlName="mcq" value="{{quiz.mcq.B}}"> <span style="width:300px">{{quiz.mcq.B}}</span>
+  
+</div><div class="ans ml-2">
+<input type="radio" formControlName="mcq" value="{{quiz.mcq.C}}"> <span style="width:300px">{{quiz.mcq.C}}</span>
+    
+</div><div class="ans ml-2">
+<input type="radio" formControlName="mcq" value="{{quiz.mcq.D}}"> <span style="width:300px">{{quiz.mcq.D}}</span>
+
+</div></div>
+    
+<input type="submit" value="Submit">
+                  </tr>  
+                   
+                    <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button class="btn btn-primary d-flex align-items-center btn-danger" type="button"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button><button class="btn btn-primary border-success align-items-center btn-success" type="button">Next<i class="fa fa-angle-right ml-2"></i></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

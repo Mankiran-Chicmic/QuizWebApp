@@ -1,0 +1,26 @@
+{
+  "quiz": [
+    {
+      "id": 1,
+      "questions":"Which of the following term is not used in physics?",
+      "mcq":{
+        "A":"Latent Heat",
+        "B":"Nuclear fusion",
+        "C":"Refractive Index",
+        "D":"Stock Value"
+      },
+      "answer":"Stock Value"
+    },
+    {
+      "id": 2,
+      "questions":"RadioCarbon is produced in the atmosphere as a result of?",
+      "mcq":{
+        "A":"Collision between fast neutrons and nitrogen nuclei present in the atmosphere",
+        "B":"Action of ultraviolet light from the sun on atmospheric oxygen.",
+        "C":"Action of solar radiations particularly cosmic rays on carbon dioxide present in the atmosphere.",
+        "D":"Lightning discharge in atmosphere."
+      },
+      "answer":"Collision between fast neutrons and nitrogen nuclei present in the atmosphere"
+    }
+  ]
+}

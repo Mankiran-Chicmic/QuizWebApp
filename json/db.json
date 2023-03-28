@@ -1,26 +1,44 @@
 {
+  "score": [
+    {
+      "id": 1,
+      "status": 0,
+      "flag": false
+    }
+  ],
   "quiz": [
     {
       "id": 1,
-      "questions":"Which of the following term is not used in physics?",
-      "mcq":{
-        "A":"Latent Heat",
-        "B":"Nuclear fusion",
-        "C":"Refractive Index",
-        "D":"Stock Value"
+      "questions": "Which of the following term is not used in physics?",
+      "mcq": {
+        "A": "Latent Heat",
+        "B": "Nuclear fusion",
+        "C": "Refractive Index",
+        "D": "Stock Value"
       },
-      "answer":"Stock Value"
+      "answer": "Stock Value"
     },
     {
       "id": 2,
-      "questions":"RadioCarbon is produced in the atmosphere as a result of?",
-      "mcq":{
-        "A":"Collision between fast neutrons and nitrogen nuclei present in the atmosphere",
-        "B":"Action of ultraviolet light from the sun on atmospheric oxygen.",
-        "C":"Action of solar radiations particularly cosmic rays on carbon dioxide present in the atmosphere.",
-        "D":"Lightning discharge in atmosphere."
+      "questions": "RadioCarbon is produced in the atmosphere as a result of?",
+      "mcq": {
+        "A": "Collision between fast neutrons and nitrogen nuclei present in the atmosphere",
+        "B": "Action of ultraviolet light from the sun on atmospheric oxygen.",
+        "C": "Action of solar radiations particularly cosmic rays on carbon dioxide present in the atmosphere.",
+        "D": "Lightning discharge in atmosphere."
       },
-      "answer":"Collision between fast neutrons and nitrogen nuclei present in the atmosphere"
+      "answer": "Collision between fast neutrons and nitrogen nuclei present in the atmosphere"
+    },
+    {
+      "id":3,
+      "questions": "If a=1 and b=2 What is (a+b) ?",
+      "mcq": {
+        "A": "12",
+        "B": "3",
+        "C": "24",
+        "D": "0"
+      },
+      "answer": "3"
     }
   ]
 }

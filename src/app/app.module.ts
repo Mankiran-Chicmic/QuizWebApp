@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AnswerComponent } from './components/answer/answer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    AnswerComponent
   ],
   imports: [
     BrowserModule,

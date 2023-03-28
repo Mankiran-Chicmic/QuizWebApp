@@ -5,35 +5,90 @@
                 <div class="border">
                     <div class="question bg-white p-3 border-bottom">
                         <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                            <h4>MCQ Quiz</h4><span>(5 of 20)</span></div>
+                            <h4>MCQ Quiz</h4><span>{{this.page}} of {{3}}</span>
                         </div>
-                  <tr *ngFor="let quiz of quiz;let j=index">
-                    <div class="question bg-white p-3 border-bottom">
-                        <div class="d-flex flex-row align-items-center question-title">
-                            <h3 class="text-danger">Q.{{quiz.id}}. {{quiz.questions}}</h3>
-                           
-                            <h5 class="mt-1 ml-2"></h5>
-                        
-</div><div class="ans ml-2"> 
-<input type="radio" formControlName="mcq" value="{{quiz.mcq.A}}"> <span style="width:300px">{{quiz.mcq.A}}</span>
-   
-</div><div class="ans ml-2">
-<input type="radio" formControlName="mcq" value="{{quiz.mcq.B}}"> <span style="width:300px">{{quiz.mcq.B}}</span>
-  
-</div><div class="ans ml-2">
-<input type="radio" formControlName="mcq" value="{{quiz.mcq.C}}"> <span style="width:300px">{{quiz.mcq.C}}</span>
-    
-</div><div class="ans ml-2">
-<input type="radio" formControlName="mcq" value="{{quiz.mcq.D}}"> <span style="width:300px">{{quiz.mcq.D}}</span>
+                    </div>
+                    <tr *ngFor="let quiz of quiz;let j=index">
+                        <div class="question bg-white p-3 border-bottom">
+                            <div class="d-flex flex-row align-items-center question-title">
+                                <h3 class="text-danger">Q.{{quiz.id}}. {{quiz.questions}}</h3>
+                               
 
-</div></div>
-    
-<input type="submit" value="Submit">
-                  </tr>  
-                   
-                    <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button class="btn btn-primary d-flex align-items-center btn-danger" type="button"><i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button><button class="btn btn-primary border-success align-items-center btn-success" type="button">Next<i class="fa fa-angle-right ml-2"></i></button></div>
+                                <h5 class="mt-1 ml-2"></h5>
+
+                            </div>
+                      
+                            <div class="ans ml-2">
+                                <input type="radio" value="{{quiz.mcq.A}}" formControlName="mcq" id="{{quiz.mcq.A}}" name="mcq" 
+                                checked="checked"  [value]="{ques:quiz.mcq.A,id:quiz.id,ans:quiz.answer}"> <span
+                                    style="width:300px">{{quiz.mcq.A}}
+                                    <div *ngIf="quiz.mcq.A==ques && correct">
+                                        <img [src]="url1" width="20px">
+                                    </div>
+                                    <div *ngIf="quiz.mcq.A==ques && !correct">
+                                        <img [src]="url" width="10px">
+                                    </div>
+                                </span>
+                            </div>
+                            
+                            <div class="ans ml-2">
+                                <input type="radio" value="{{quiz.mcq.B}}" formControlName="mcq" id="{{quiz.mcq.B}}" name="mcq"  
+                                checked="checked"  [value]="{ques:quiz.mcq.B,id:quiz.id,ans:quiz.answer}"> <span
+                                    style="width:300px">{{quiz.mcq.B}}
+                                    <div *ngIf="quiz.mcq.B==ques && correct">
+                                        <img [src]="url1" width="20px">
+                                    </div>
+                                    <div *ngIf="quiz.mcq.B==ques && !correct">
+                                        <img [src]="url" width="10px">
+                                    </div>
+                                </span>
+                            </div>
+
+                            <div class="ans ml-2">
+                                <input type="radio" value="{{quiz.mcq.C}}" formControlName="mcq" id="{{quiz.mcq.C}}" name="mcq" 
+                                checked="checked"   [value]="{ques:quiz.mcq.C,id:quiz.id,ans:quiz.answer}"> <span
+                                    style="width:300px">{{quiz.mcq.C}}
+                                    <div *ngIf="quiz.mcq.C==ques && correct">
+                                        <img [src]="url1" width="20px">
+                                    </div>
+                                    <div *ngIf="quiz.mcq.C==ques && !correct">
+                                        <img [src]="url" width="10px">
+                                    </div>
+                                </span>
+                            </div>
+
+                            <div class="ans ml-2">
+                                <input type="radio" value="{{quiz.mcq.D}}" formControlName="mcq" id="{{quiz.mcq.D}}" name="mcq" 
+                                  checked="checked"  [value]="{ques:quiz.mcq.D,id:quiz.id,ans:quiz.answer}"> <span
+                                    style="width:300px">{{quiz.mcq.D}}
+                                    <div *ngIf="quiz.mcq.D==ques && correct">
+                                        <img [src]="url1" width="20px">
+                                    </div>
+                                    <div *ngIf="quiz.mcq.D==ques && !correct">
+                                        <img [src]="url" width="10px">
+                                    </div>
+                                </span>
+                            </div>
+                     
+                            
+                        </div>
+
+                        
+                        <br>
+                        <app-answer></app-answer>
+                        <input type="submit" value="Submit">
+                    </tr>
+
+                    <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"><button
+                            class="btn btn-primary d-flex align-items-center btn-danger" type="button" (click)="previous()"><i
+                                class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;previous</button><button
+                            class="btn btn-primary border-success align-items-center btn-success" type="button" (click)="next()">Next<i
+                                class="fa fa-angle-right ml-2"></i></button></div>
                 </div>
             </div>
         </div>
     </div>
 </form>
+<div *ngIf="page==3">
+    <button (click)="showResult(count,false)">Show Result</button>
+</div>
